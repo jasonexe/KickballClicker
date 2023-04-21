@@ -23,7 +23,9 @@
 }
 
 header,
-h1, h2, .center_text{
+h1,
+h2,
+.center_text {
     text-align: center;
 }
 
@@ -35,7 +37,9 @@ h3 {
     font-size: 1.8rem;
 }
 
-option, select, .capitalize {
+option,
+select,
+.capitalize {
     text-transform: capitalize;
 }
 
@@ -64,8 +68,43 @@ footer {
 }
 
 table {
+    /* width: 100%; */
+    table-layout: auto;
+    border-spacing: .5em;
+    border-collapse: separate;
+}
+
+td {
+    padding: .5em;
+    text-align: center;
+    width: auto
+}
+
+tr {
+    width: auto
+}
+
+.fill_blue {
+    background-color: blue;
+    color: white;
+}
+
+.fill_black {
+    background-color: black;
+    color: white;
+}
+
+.fill_red {
+    background-color: red;
+    color: white;
+}
+
+.wide_green {
+    background-color: green;
+    color: white;
     width: 100%;
-    table-layout: fixed;
+    padding: 1em;
+    margin-bottom: 1em;
 }
 
 * {
