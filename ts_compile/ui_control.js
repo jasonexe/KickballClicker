@@ -29,4 +29,14 @@ let updateUi = function (state) {
     foulElement.innerText = state.foul.toString();
     outElement.innerText = state.out.toString();
 };
+// user-scalable="no" is helpfully ignored by iOS Safari. Prevent all zooming here.
+// Prevent double click to zoom
+let lastTouchEnd = 0;
+document.addEventListener('touchend', function (event) {
+    let now = (new Date()).getTime();
+    if (now - lastTouchEnd <= 300) {
+        event.preventDefault();
+    }
+    lastTouchEnd = now;
+}, false);
 //# sourceMappingURL=ui_control.js.map
