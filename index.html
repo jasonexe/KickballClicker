@@ -26,13 +26,28 @@
 <head>
     <title>Kickball Clicker</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <meta name="viewport? content=" width=device-width, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link rel="manifest" href="manifest.json" />
 </head>
 
 <body onload="initializeGame()">
+    <header>
+        This site is open sourced on <a href="https://github.com/jasonexe/KickballClicker"
+            target="_blank">GitHub</a>
+    </header>
     <!-- Main section with a border on each side, doesn't need to be super wide-->
     <section class="main">
+        <div class="fill_red" onclick="resetState()" style="padding: .2em">Start a new game</div>
+        <div id="runner_scored" onclick="triggerAction(Action.RUNNER_SCORED)" class="wide_green"> Runner Scored! </div>
+        <div id="kicker_safe" onclick="triggerAction(Action.KICKER_SAFE)" class="wide_green"> Kicker is safe! </div>
+        <table>
+            <tr>
+                <td class="fill_black" onclick="triggerAction(Action.TOGGLE_CLOCK)"> Game clock <h1 id="time_left">45:00</h1> </td>
+                <td class="fill_black" onclick="undo()" id="undo"> Undo </td>
+                <td class="fill_black" onclick="redo()" id="redo"> Redo </td>
+            </tr>
+        </table>
+        <div class="divider"></div>
         <table>
             <tr>
                 <td class="fill_blue"> <span id="away_text">Away ▲</span> <h1 id="away_score" >0</h1></td>
@@ -46,21 +61,5 @@
                 <td class="fill_red" onclick="triggerAction(Action.OUT)"> Out <h1 id="out_count">0</h1></td>
             </tr>
         </table>
-        <div id="runner_scored" onclick="triggerAction(Action.RUNNER_SCORED)" class="wide_green"> Runner Scored! </div>
-        <div id="kicker_safe" onclick="triggerAction(Action.KICKER_SAFE)" class="wide_green"> Kicker is safe! </div>
-        <table>
-            <tr>
-                <td class="fill_black" onclick="triggerAction(Action.TOGGLE_CLOCK)"> Game clock <h1 id="time_left">45:00</h1> </td>
-                <td class="fill_black" onclick="undo()" id="undo"> Undo </td>
-                <td class="fill_black" onclick="redo()" id="redo"> Redo </td>
-            </tr>
-        </table>
-        <div class="divider"></div>
-        <div class="fill_red" onclick="resetState()" style="padding: .2em">Start a new game</div>
     </section>
-
-    <footer>
-        This site is open sourced on <a href="https://github.com/jasonexe/KickballClicker"
-            target="_blank">GitHub</a>
-    </footer>
 </body>
