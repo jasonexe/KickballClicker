@@ -45,6 +45,7 @@ let updateState = function (existingState, action) {
             else {
                 newState.homeScore += 1;
             }
+            resetCount(newState);
             break;
         case Action.KICKER_SAFE:
             newState.strike = 0;
